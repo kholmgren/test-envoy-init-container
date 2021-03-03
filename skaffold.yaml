@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: test-envoy-init-container
+build:
+  artifacts:
+  - image: docker.io/kettil/test-envoy-init-container
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kustomize:
+    paths:
+    - kube/kustomize
